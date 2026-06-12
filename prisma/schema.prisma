@@ -91,11 +91,11 @@ model templates {
 }
 
 model users {
-  id            String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  email         String   @unique @db.Citext
-  password_hash String
-  plan          String
+  id                 String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  email              String   @unique @db.Citext
+  password_hash      String
+  plan               String
   stripe_customer_id String?
-  created_at    DateTime @default(now()) @db.Timestamptz(6)
-  sites         sites[]
+  created_at         DateTime @default(now()) @db.Timestamptz(6)
+  sites              sites[]
 }
